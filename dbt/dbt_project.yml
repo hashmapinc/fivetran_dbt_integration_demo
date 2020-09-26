@@ -1,0 +1,27 @@
+name: 'fivetran_dbt_integration_demo'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'fivetran_dbt_integration_demo'
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:         
+    - "target"
+    - "dbt_modules"
+
+models:
+  fivetran_dbt_integration_demo:
+    # project defaults
+    +materialized: view
+    
+    snowflake_usage:
+      staging:
+        +materialized: incremental

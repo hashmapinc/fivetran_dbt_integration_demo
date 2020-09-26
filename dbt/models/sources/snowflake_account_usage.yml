@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: snowflake_account_usage
+    database: snowflake
+    schema: account_usage
+    loader: snowflake # informational only (free text)
+    
+    tags:
+      - snowflake_usage
+      
+    tables:
+      - name: query_history
+      - name: warehouse_metering_history
