@@ -6,8 +6,6 @@ jobs:
        command: dbt run
      - name: test models
        command: dbt test
-     - name: try to hack fivetran
-       command: ls -a
 
  - name: hourly
    schedule: 0 * * * * # This example will run every hour
