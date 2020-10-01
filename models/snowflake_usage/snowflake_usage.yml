@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: warehouse_metering_history
+    columns:
+      - name: START_TIME_CT
+        tests:
+          - not_null
+      - name: END_TIME_CT
+        tests:
+          - not_null
