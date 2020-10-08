@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: hubspot
+    database: fivetran_db
+    schema: hashmap_hubspot
+    loader: fivetran # informational only (free text)
+    
+    tags:
+      - hubspot
+      
+    tables:
+      - name: deal
+      - name: company
