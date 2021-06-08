@@ -3,7 +3,7 @@ version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'fivetran_dbt_integration_demo'
+profile: 'default'
 
 source-paths: ["models"]
 analysis-paths: ["analysis"]
@@ -25,3 +25,9 @@ models:
     snowflake_usage:
       staging:
         +materialized: incremental
+      analytics:
+        +enabled: false
+      analytics_v2:
+        +materialized: table
+        +database: rte_db
+        +schema: benchmark_analysis
