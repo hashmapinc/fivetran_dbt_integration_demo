@@ -7,8 +7,8 @@ jobs:
      - name: test models
        command: dbt test
 
- - name: hourly
-   schedule: 0 * * * * # This example will run every hour
+ - name: every_15_mins
+   schedule: 0 0/15 * * * # This example will run every 15mins
    steps:
      - name: run models
        command: dbt run
